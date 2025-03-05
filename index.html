@@ -4,39 +4,27 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>Meu Portfólio</title>
-
     <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
     <meta name="viewport" content="width=device-width">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
   </head>
   <body>
     <div class="wrapper">
       <header>
         <h1>Walter Cordeiro Guilhermino</h1>
-        <p>Business and Tech</p>
-       
-        <div class="contact-card">
+        <h3>Business and Tech</h3>
+      </header>
+
+      <!-- Seções "Sobre Mim" e "Contato" -->
+      <div class="main-content">
+        <section class="about-me contact-card">
           <h2>Sobre Mim</h2>
           <p>
             Olá! Meu nome é Walter Guilhermino e sou bacharel de Administração pela Pontifícia Universidade Católica de Campinas (PUC-CAMPINAS), 
-            Tenho conhecimento em Power BI, Python, Excel e SAP, além de familiaridade com metodologias ágeis. 
-            Meu objetivo é unir tecnologia, dados e negócios para criar soluções inovadoras e impulsionar resultados.
+            Tenho conhecimento em Power BI, Python, Excel e SAP, meu objetivo é unir tecnologia, dados e negócios para criar soluções inovadoras e impulsionar resultados.
           </p>
-        </div>
-      </header>
+        </section>
 
-      <section>
-        <div class="contact-card">
-        <h2>Projetos</h2>
-        <div id="projects-list"></div> <!-- Aqui os projetos serão exibidos -->
-        </div>
-      </section>
-
-      <section>
-        <div class="contact-card">
+        <section class="contact contact-card">
           <h2>Contato</h2>
           <p>Entre em contato comigo pelo <a href="https://wa.me/5519981173811?text=Olá!%20Gostaria%20de%20entrar%20em%20contato." target="_blank">WhatsApp</a></p>
           <p>Ou por e-mail: <a href="mailto:waltercguilhermino@gmail.com">Email</a></p>
@@ -44,9 +32,18 @@
             <li><a href="https://github.com/WalterCordeiroGuilhermino" target="_blank">GitHub</a></li>
             <li><a href="https://linkedin.com/in/walterguilhermino" target="_blank">LinkedIn</a></li>
           </ul>
-        </div>
-      </section>
+        </section>
+      </div>
 
+      <!-- Seção de Projetos -->
+      <section>
+        <div id="projects-list" class="projects-container">
+          <h2 class="projects-title">Projetos</h2>
+          <!-- Aqui os projetos serão exibidos dinamicamente -->
+        </div>
+      </section> 
+
+      <!-- Footer -->
       <footer>
         <p><small>Hospedado no GitHub Pages &mdash; Tema por <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
