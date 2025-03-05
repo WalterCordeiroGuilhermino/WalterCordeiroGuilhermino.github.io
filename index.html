@@ -18,13 +18,14 @@
         <h1>Walter Cordeiro Guilhermino</h1>
         <p>Business and Tech</p>
        
-            <h2>Sobre Mim</h2>
-            <p>
-              Olá! Meu nome é Walter Guilhermino e sou bacharel de Administração pela Pontifícia Universidade Católica de Campinas (PUC-CAMPINAS), 
-              Tenho conhecimento em Power BI, Python, Excel e SAP, além de familiaridade com metodologias ágeis. 
-              Meu objetivo é unir tecnologia, dados e negócios para criar soluções inovadoras e impulsionar resultados.
-            </p>
-      
+        <div class="contact-card">
+          <h2>Sobre Mim</h2>
+          <p>
+            Olá! Meu nome é Walter Guilhermino e sou bacharel de Administração pela Pontifícia Universidade Católica de Campinas (PUC-CAMPINAS), 
+            Tenho conhecimento em Power BI, Python, Excel e SAP, além de familiaridade com metodologias ágeis. 
+            Meu objetivo é unir tecnologia, dados e negócios para criar soluções inovadoras e impulsionar resultados.
+          </p>
+        </div>
       </header>
 
       <section>
@@ -32,49 +33,16 @@
         <div id="projects-list"></div> <!-- Aqui os projetos serão exibidos -->
       </section>
 
-      <script>
-      
-      document.addEventListener('DOMContentLoaded', () => {
-  const username = 'WalterCordeiroGuilhermino'; // Substitua pelo seu nome de usuário do GitHub
-  const projectsList = document.getElementById('projects-list');
-
-  async function fetchProjects() {
-    try {
-      const response = await fetch(`https://api.github.com/users/${username}/repos`);
-      const projects = await response.json();
-
-      projects.forEach(project => {
-        // Filtra por repositórios com o tópico "portfolio"
-        if (project.topics && project.topics.includes('portfolio')) {
-          const projectElement = document.createElement('div');
-          projectElement.className = 'project';
-          projectElement.innerHTML = `
-            <h3>${project.name}</h3>
-            <p>${project.description || 'Sem descrição.'}</p>
-            <a href="${project.html_url}" target="_blank">Ver no GitHub</a>
-          `;
-          projectsList.appendChild(projectElement);
-        }
-      });
-    } catch (error) {
-      console.error('Erro ao buscar projetos:', error);
-    }
-  }
-
-  fetchProjects();
-});
-
-      </script>
-
       <section>
-        <h2>Contato</h2>
-        <p>Entre em contato comigo pelo <a href="https://wa.me/5519981173811?text=Olá!%20Gostaria%20de%20entrar%20em%20contato." target="_blank">WhatsApp</a></p>
-  <p>Ou por e-mail: <a href="mailto:waltercguilhermino@gmail.com">Email</a></p>
-        <ul>
-          <li><a href="https://github.com/WalterCordeiroGuilhermino" target="_blank">GitHub</a></li>
-          <li><a href="https://linkedin.com/in/walterguilhermino" target="_blank">LinkedIn</a></li>
-          
-        </ul>
+        <div class="contact-card">
+          <h2>Contato</h2>
+          <p>Entre em contato comigo pelo <a href="https://wa.me/5519981173811?text=Olá!%20Gostaria%20de%20entrar%20em%20contato." target="_blank">WhatsApp</a></p>
+          <p>Ou por e-mail: <a href="mailto:waltercguilhermino@gmail.com">Email</a></p>
+          <ul>
+            <li><a href="https://github.com/WalterCordeiroGuilhermino" target="_blank">GitHub</a></li>
+            <li><a href="https://linkedin.com/in/walterguilhermino" target="_blank">LinkedIn</a></li>
+          </ul>
+        </div>
       </section>
 
       <footer>
@@ -82,5 +50,6 @@
       </footer>
     </div>
     <script src="javascripts/scale.fix.js"></script>
+    <script src="javascripts/main.js"></script>
   </body>
 </html>
