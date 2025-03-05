@@ -273,28 +273,76 @@ footer {
   }
 }
 
-.project {
-  margin-bottom: 20px;
-  padding: 15px;
-  border: 1px solid #e5e5e5; /* Borda cinza claro */
-  border-radius: 5px;
+/* Estilos para os cards */
+.card {
   background-color: #ffffff; /* Fundo branco */
+  border: 1px solid #e5e5e5; /* Borda cinza claro */
+  border-radius: 5px; /* Bordas arredondadas */
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Sombra suave */
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-.project h3 {
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra mais forte ao passar o mouse */
+  transform: translateY(-2px); /* Efeito de elevação */
+}
+
+.card h3 {
   margin-top: 0;
   color: #333333; /* Texto cinza escuro */
+  font-weight: 500;
 }
 
-.project p {
+.card p {
+  color: #666666; /* Texto cinza médio */
+  margin-bottom: 15px;
+}
+
+.card a {
+  color: #0077cc; /* Azul profissional */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.card a:hover {
+  color: #0055aa; /* Azul mais escuro ao passar o mouse */
+}
+
+.contact-card {
+  background-color: #ffffff; /* Fundo branco */
+  border: 1px solid #e5e5e5; /* Borda cinza claro */
+  border-radius: 5px; /* Bordas arredondadas */
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.contact-card h2 {
+  margin-top: 0;
+  color: #333333; /* Texto cinza escuro */
+  font-weight: 500;
+}
+
+.contact-card p {
   color: #666666; /* Texto cinza médio */
 }
 
-.project a {
-  color: #0077cc; /* Azul profissional */
-  text-decoration: none;
+.contact-card ul {
+  list-style-type: none;
+  padding: 0;
 }
 
-.project a:hover {
+.contact-card ul li {
+  margin-bottom: 10px;
+}
+
+.contact-card ul li a {
+  color: #0077cc; /* Azul profissional */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-card ul li a:hover {
   color: #0055aa; /* Azul mais escuro ao passar o mouse */
 }
