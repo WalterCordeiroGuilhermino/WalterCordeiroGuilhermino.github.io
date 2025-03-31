@@ -5,20 +5,23 @@ body, h1, h2, h3, p, ul, li {
   box-sizing: border-box;
 }
 
-/* Estilo geral do corpo */
+/* Estilo geral do corpo - Tema Escuro */
 body {
-  background-color: #f9f9f9; /* Fundo branco suave */
+  background-color: #081428;
   padding: 50px;
   font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  color: #333333; /* Texto cinza escuro */
+  color: #FFFFFF;
   line-height: 1.6;
   font-weight: 400;
 }
 
-/* Container principal */
+/* Container principal - ATUALIZADO */
 .wrapper {
   max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 /* Estilo do header */
@@ -29,15 +32,15 @@ header {
 
 header h1 {
   font-size: 28px;
-    font-weight: 600; /* Fonte mais grossa */
-    color: #111111; /* Preto mais intenso */
-    margin-bottom: 10px;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-bottom: 10px;
 }
 
 header h3 {
   font-size: 1.5em;
-  font-weight: 500; /* Fonte um pouco mais grossa */
-  color: #111111; /* Preto mais intenso */
+  font-weight: 500;
+  color: #ABCDEE;
 }
 
 /* Estilo das seções */
@@ -46,60 +49,124 @@ header h3 {
   flex-wrap: wrap;
   gap: 20px;
   margin-bottom: 20px;
+  width: 100%;
 }
 
-/* Estilo do contact-card (aplicado a ambas as seções) */
+/* Estilo do contact-card - ATUALIZADO */
 .contact-card {
-  background-color: white;
+  background-color: #183253;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   flex: 1;
-  min-width: 300px; /* Largura mínima para evitar que fique muito estreito */
+  min-width: 300px;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .contact-card h2 {
   font-size: 24px;
-  font-weight: 600; /* Fonte mais grossa */
-  color: #111111; /* Preto mais intenso */
+  font-weight: 600;
+  color: #FFFFFF;
   margin-top: 0;
   margin-bottom: 20px;
-  border-bottom: 2px solid #e5e5e5; /* Linha divisória abaixo do título */
-  padding-bottom: 10px; /* Espaço entre o texto e a linha */
+  border-bottom: 2px solid #4875BB;
+  padding-bottom: 10px;
 }
 
 /* Ajustes específicos para a seção "Sobre Mim" */
 .about-me {
-  flex: 2; /* Ocupa mais espaço que a seção "Contato" */
+  flex: 2;
+  max-width: 100%;
+}
+
+.about-text {
+  text-align: justify;
+  hyphens: auto;
+  text-justify: inter-word;
+}
+
+.about-text p {
+  margin-bottom: 1.2em;
+  line-height: 1.7;
+  color: #E1EBF9;
+  text-indent: 1.5em;
+}
+
+@media (max-width: 768px) {
+  .about-text {
+    text-align: left;
+    hyphens: none;
+  }
+  
+  .about-text p {
+    text-indent: 0;
+  }
 }
 
 /* Ajustes específicos para a seção "Contato" */
 .contact {
-  flex: 1; /* Ocupa menos espaço que a seção "Sobre Mim" */
+  flex: 1;
 }
 
 .contact ul {
   list-style-type: none;
   padding: 0;
+  margin: 15px 0 0 0;
 }
 
 .contact ul li {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.contact ul li:hover {
+  transform: translateX(5px);
 }
 
 .contact a {
+  display: flex;
+  align-items: center;
   text-decoration: none;
-  color: #0077cc; /* Azul profissional para links */
-  transition: color 0.3s ease; /* Transição suave */
+  color: #ABCDEE;
+  transition: color 0.3s ease;
+  font-size: 16px;
 }
 
 .contact a:hover {
-  color: #0055aa; /* Azul mais escuro ao passar o mouse */
+  color: #FFFFFF;
 }
 
-/* Estilo da seção de projetos */
-#projects-list {
-  margin-top: 20px;
+/* Estilos para os ícones */
+.contact .fab, 
+.contact .fas {
+  font-size: 22px;
+  width: 30px;
+  margin-right: 12px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.contact .fa-whatsapp {
+  color: #25D366;
+}
+
+.contact .fa-envelope {
+  color: #D44638;
+}
+
+.contact .fa-github {
+  color: #E1EBF9;
+}
+
+.contact .fa-linkedin {
+  color: #0A66C2;
+}
+
+.contact a:hover .fab,
+.contact a:hover .fas {
+  filter: brightness(1.2);
+  transform: scale(1.1);
 }
 
 /* Estilo do footer */
@@ -107,74 +174,233 @@ footer {
   text-align: center;
   margin-top: 20px;
   padding-top: 20px;
-  border-top: 1px solid #ddd;
-  color: #666;
+  border-top: 1px solid #305285;
+  color: #ABCDEE;
+  width: 100%;
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
+  body {
+    padding: 30px;
+  }
+  
   .main-content {
-      flex-direction: column;
+    flex-direction: column;
   }
 
   .about-me, .contact {
-      flex: 1 1 100%; /* Faz as seções ocuparem 100% da largura em telas pequenas */
-      max-width: 100%;
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+  
+  .contact ul li {
+    margin-bottom: 12px;
+  }
+  
+  .contact a {
+    font-size: 15px;
+  }
+  
+  .contact .fab,
+  .contact .fas {
+    font-size: 20px;
+    width: 28px;
   }
 }
 
-/* Estilo para o container da seção de projetos */
+/* ========== SEÇÃO DE PROJETOS ATUALIZADA ========== */
 .projects-container {
-  background-color: white; /* Fundo branco */
-  border-radius: 8px; /* Bordas arredondadas */
-  padding: 20px; /* Espaçamento interno */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
-  margin-top: 20px; /* Espaço acima da seção */
+  background-color: #183253;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  margin: 40px 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-/* Estilo para o título "Projetos" */
 .projects-title {
-  font-size: 24px;
-    font-weight: 600; /* Fonte mais grossa */
-    color: #111111; /* Preto mais intenso */
-    margin-top: 0;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #e5e5e5; /* Linha divisória abaixo do título */
-    padding-bottom: 10px; /* Espaço entre o texto e a linha */
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  text-align: center;
+  margin: 0 auto 30px;
+  display: block;
+  width: 100%;
+  padding: 0 20px;
+  position: relative;
 }
 
-/* Estilo para cada card de projeto (mantido) */
-.card {
-  background-color: white; /* Fundo branco */
-  border-radius: 8px; /* Bordas arredondadas */
-  padding: 20px; /* Espaçamento interno */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
-  margin-bottom: 20px; /* Espaço entre os cards */
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+.projects-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: #4875BB;
+  margin: 15px auto 0;
 }
 
-.card:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Sombra mais forte ao passar o mouse */
-  transform: translateY(-2px); /* Efeito de elevação */
+#projects-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.card h3 {
-  margin-top: 0;
-  color: #333333; /* Cor do título do projeto */
-  font-weight: 500;
+.project-card {
+  background: #1a3a5a;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
-.card p {
-  color: #666666; /* Cor do texto descritivo */
-  margin-bottom: 10px;
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
-.card a {
-  color: #0077cc; /* Cor do link */
+.project-image {
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.05);
+}
+
+.project-content {
+  padding: 20px;
+}
+
+.project-content h3 {
+  color: #FFFFFF;
+  margin: 0 0 12px 0;
+  font-size: 1.2rem;
+}
+
+.project-description p {
+  color: #E1EBF9;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.project-techs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 15px 0;
+  list-style: none;
+  padding: 0;
+}
+
+.project-techs li {
+  background: rgba(72, 117, 187, 0.2);
+  color: #ABCDEE;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.project-links {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.project-links a {
+  color: #ABCDEE;
   text-decoration: none;
+  display: inline-flex;
+  align-items: center;
   transition: color 0.3s ease;
+  font-size: 0.9rem;
 }
 
-.card a:hover {
-  color: #0055aa; /* Cor do link ao passar o mouse */
+.project-links a:hover {
+  color: #FFFFFF;
+}
+
+.project-links i {
+  margin-right: 6px;
+  font-size: 0.9rem;
+}
+
+/* Responsividade para projetos */
+@media (max-width: 900px) {
+  #projects-list {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-container {
+    padding: 25px 20px;
+  }
+  
+  .projects-title {
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+  }
+  
+  #projects-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .project-image {
+    height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-content {
+    padding: 15px;
+  }
+  
+  .projects-title {
+    font-size: 1.5rem;
+  }
+  
+  .project-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* Melhorias para as imagens */
+.project-image {
+  position: relative;
+  background-color: #1a3a5a;
+}
+
+.project-image img {
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+/* Loading states */
+.loading, .no-projects, .error {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 2rem;
+  color: #ABCDEE;
+}
+
+.no-projects a, .error a {
+  color: #4875BB;
+  text-decoration: none;
 }

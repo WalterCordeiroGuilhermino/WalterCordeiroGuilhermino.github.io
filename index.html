@@ -6,42 +6,69 @@
     <title>Meu Portfólio</title>
     <link rel="stylesheet" href="stylesheets/styles.css">
     <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   </head>
   <body>
     <div class="wrapper">
       <header>
         <h1>Walter Cordeiro Guilhermino</h1>
-        <h3>Business and Tech</h3>
+        <h3>Business Solutions Developer</h3>
       </header>
 
       <!-- Seções "Sobre Mim" e "Contato" -->
       <div class="main-content">
         <section class="about-me contact-card">
           <h2>Sobre Mim</h2>
-          <p>
-            Olá! Meu nome é Walter Guilhermino e sou bacharel de Administração pela Pontifícia Universidade Católica de Campinas (PUC-CAMPINAS), 
-            Tenho conhecimento em Power BI, Python, Excel e SAP, meu objetivo é unir tecnologia, dados e negócios para criar soluções inovadoras e impulsionar resultados.
-          </p>
+          <div class="about-text">
+            <p>
+              Sou fascinado por desenvolver soluções que unem tecnologia e gestão. Meu primeiro contato com computadores 
+              foi ainda na infância e adolecência,  essa curiosidade me levou a cursar um
+              técnico em informática e, mais tarde, ao bacharelado em Administração pela PUC-Campinas.
+            </p>
+            <p>
+              Nos últimos quatro anos, trabalhei na área administrativa aplicando meus conhecimentos técnicos para 
+              automação de processos e análise de dados. Fui responsável em transformar operações manuais em soluções inteligentes. 
+            </p>
+            <p>
+              Atualmente me dedico a projetos de análise de dados (Power BI, Python) e automação de processos.
+            </p>
+          </div>
         </section>
 
         <section class="contact contact-card">
           <h2>Contato</h2>
-          <p>Entre em contato comigo pelo <a href="https://wa.me/5519981173811?text=Olá!%20Gostaria%20de%20entrar%20em%20contato." target="_blank">WhatsApp</a></p>
-          <p>Ou por e-mail: <a href="mailto:waltercguilhermino@gmail.com">Email</a></p>
-          <ul>
-            <li><a href="https://github.com/WalterCordeiroGuilhermino" target="_blank">GitHub</a></li>
-            <li><a href="https://linkedin.com/in/walterguilhermino" target="_blank">LinkedIn</a></li>
+          <ul class="contact-list">
+            <li>
+              <a href="https://wa.me/5519981173811?text=Olá!%20Gostaria%20de%20entrar%20em%20contato." target="_blank">
+                <i class="fab fa-whatsapp contact-icon"></i> WhatsApp
+              </a>
+            </li>
+            <li>
+              <a href="mailto:waltercguilhermino@gmail.com">
+                <i class="fas fa-envelope contact-icon"></i> Email
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/WalterCordeiroGuilhermino" target="_blank">
+                <i class="fab fa-github contact-icon"></i> GitHub
+              </a>
+            </li>
+            <li>
+              <a href="https://linkedin.com/in/walterguilhermino" target="_blank">
+                <i class="fab fa-linkedin contact-icon"></i> LinkedIn
+              </a>
+            </li>
           </ul>
         </section>
       </div>
 
       <!-- Seção de Projetos -->
-      <section>
-        <div id="projects-list" class="projects-container">
-          <h2 class="projects-title">Projetos</h2>
-          <!-- Aqui os projetos serão exibidos dinamicamente -->
+      <section class="projects-container">
+        <h2 class="projects-title">Projetos</h2>
+        <div id="projects-list">
+          <!-- Projetos serão inseridos aqui pelo JavaScript -->
         </div>
-      </section> 
+      </section>
 
       <!-- Footer -->
       <footer>
