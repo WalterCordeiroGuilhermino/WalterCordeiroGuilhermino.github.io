@@ -234,6 +234,8 @@ html.i18n-pending body { opacity: 0; }
 
 /* ---------- Sobre ---------- */
 .about { display: grid; grid-template-columns: 1fr 2fr; gap: 2rem; }
+.about__cta { color: var(--text); font-weight: 500; }
+.about__cta a { color: var(--accent); text-underline-offset: 3px; }
 .about__text { display: grid; gap: 1rem; font-size: 1.1rem; color: var(--text-soft); max-width: 62ch; }
 
 /* ---------- Stack ---------- */
