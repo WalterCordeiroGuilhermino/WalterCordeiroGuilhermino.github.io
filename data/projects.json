@@ -1,0 +1,18 @@
+{
+  "_leia-me": "Arquivo OPCIONAL. Cada chave é o nome exato de um repositório. Todos os campos são opcionais; o que faltar vem do GitHub. Campos com _en são usados na versão em inglês. Chaves que começam com _ são ignoradas.",
+  "_exemplo-nome-do-repositorio": {
+    "order": 1,
+    "title": "Título manual (substitui o automático)",
+    "title_en": "Manual title in English",
+    "problem": "Uma frase: qual problema o projeto resolve.",
+    "problem_en": "One sentence: what problem the project solves.",
+    "result": "Resultado real e verificável (omita se não houver métrica).",
+    "result_en": "Real, verifiable result (omit if there is no metric).",
+    "modes": [
+      "tech",
+      "negocios"
+    ],
+    "demo": "https://link-do-app-ou-dashboard",
+    "image": "assets/capa-personalizada.png"
+  }
+}

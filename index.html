@@ -1,220 +1,262 @@
 <!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Walter Cordeiro Guilhermino | Portfólio</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Walter Cordeiro Guilhermino</h1>
-        <h3>Administrador | Arquiteto de Soluções de Negócios</h3>
-      </header>
+<html lang="pt-BR" data-mode="tech" data-lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Walter Cordeiro Guilhermino · Dados, BI e Tecnologia</title>
+  <meta name="description" content="Portfólio de Walter Cordeiro Guilhermino: dados, BI e automação com Python, SQL e Power BI, com experiência em finanças, auditoria e operações. Hortolândia, SP.">
 
-      <div class="main-content">
-        <section class="about-me contact-card">
-          <h2>Sobre Mim</h2>
-          <div class="about-text">
-            <p>
-              Sou um profissional com 5 anos de experiência em rotinas administrativas/financeiras. Possuo experiência em análise de dados e criação de dashboards, também participei no projeto de implantação de sistemas de gerenciamento.
-            </p>
-            <p>
-              Sou fascinado por desenvolver soluções que unem tecnologia e gestão. Minha curiosidade pelo mundo digital me levou a cursar um técnico em informática. Também sou formado em Administração pela PUC-Campinas. Atualmente estou cursando uma pós-graduação em Data Science na Unicamp.
-            </p>
-            <p>
-              Atualmente trabalho como Trainee de Auditoria na Forvis Mazars, onde aplico minhas habilidades para processos de auditoria e garantir a conformidade financeira. 
-            </p>
+  <!-- Prévia ao compartilhar no LinkedIn/WhatsApp -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Walter Cordeiro Guilhermino · Dados, BI e Tecnologia">
+  <meta property="og:description" content="Python, SQL e Power BI com visão de negócio. Veja meus projetos.">
+  <meta property="og:url" content="https://waltercordeiroguilhermino.github.io/">
+  <meta property="og:image" content="https://waltercordeiroguilhermino.github.io/assets/default-preview.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Aplica tema, foco e idioma antes de pintar a página (evita "piscar") -->
+  <script>
+    (function () {
+      var d = document.documentElement, q = new URLSearchParams(location.search), t, m, l;
+      function get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+      t = get('theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      d.setAttribute('data-theme', t);
+      m = q.get('foco') || get('foco');
+      if (m === 'dados') m = 'tech';
+      if (m === 'tech' || m === 'negocios') d.setAttribute('data-mode', m);
+      l = q.get('lang') || get('lang');
+      if (l === 'en') {
+        d.setAttribute('data-lang', 'en'); d.lang = 'en';
+        d.classList.add('i18n-pending');
+        setTimeout(function () { d.classList.remove('i18n-pending'); }, 1500);
+      }
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="stylesheets/styles.css">
+</head>
+<body>
+  <a class="skip" href="#conteudo" data-i18n="skip">Pular para o conteúdo</a>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav">
+    <div class="container nav__inner">
+      <a class="nav__brand" href="#topo" aria-label="Walter Guilhermino">WG<span>.</span></a>
+
+      <nav class="nav__links">
+        <a href="#projetos" data-i18n="nav.projects">Projetos</a>
+        <a href="#sobre" data-i18n="nav.about">Sobre</a>
+        <a href="#stack" data-i18n="nav.stack">Stack</a>
+        <a href="#experiencia" data-i18n="nav.exp">Experiência</a>
+      </nav>
+
+      <div class="nav__controls">
+        <div class="modes" role="radiogroup" data-i18n-aria="modes.label" aria-label="Foco do portfólio">
+          <button type="button" role="radio" data-set-mode="tech">
+            <i class="fas fa-code" aria-hidden="true"></i><span>Tech</span>
+          </button>
+          <button type="button" role="radio" data-set-mode="negocios">
+            <i class="fas fa-briefcase" aria-hidden="true"></i><span data-i18n="modes.business">Negócios</span>
+          </button>
+        </div>
+        <button type="button" class="icon-btn icon-btn--text" id="lang-toggle" aria-label="Switch to English">EN</button>
+        <button type="button" class="icon-btn" id="theme-toggle" aria-label="Alternar tema">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="topo">
+      <div class="container">
+        <p class="hero__status"><span class="dot" aria-hidden="true"></span> <span data-i18n="hero.status">Disponível para novas oportunidades</span></p>
+
+        <!-- Preenchidos pelo JS conforme foco e idioma (objeto MODES em main.js) -->
+        <p class="hero__role" data-text="role"></p>
+        <h1 class="hero__title" data-text="headline"></h1>
+        <p class="hero__sub" data-text="sub"></p>
+
+        <div class="hero__meta">
+          <span><i class="fas fa-location-dot" aria-hidden="true"></i> <span data-i18n="hero.loc">Hortolândia, SP · Brasil</span></span>
+          <span><i class="far fa-clock" aria-hidden="true"></i> <span data-i18n="hero.tz">UTC−3 (horário de Brasília)</span></span>
+          <span><i class="fas fa-language" aria-hidden="true"></i> <span data-i18n="hero.lang">Inglês fluente (C2)</span></span>
+        </div>
+
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="#projetos"><span data-i18n="hero.cta1">Ver projetos</span> <i class="fas fa-arrow-down" aria-hidden="true"></i></a>
+          <a class="btn btn--ghost" href="#contato" data-i18n="hero.cta2">Entrar em contato</a>
+        </div>
+
+        <!-- Resultados reais da trajetória (detalhes na seção Experiência) -->
+        <dl class="proof">
+          <div><dt>−40%</dt><dd data-i18n="proof.1">no tempo de resposta a tratativas de risco</dd></div>
+          <div><dt data-i18n="proof.2v">USD 100 mil+</dt><dd data-i18n="proof.2">em pedidos de venda geridos por mês</dd></div>
+          <div><dt>50+</dt><dd data-i18n="proof.3">contratos de prestadores administrados</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ============ PROJETOS (automático via GitHub) ============ -->
+    <section class="section" id="projetos">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <p class="eyebrow" data-i18n="proj.eyebrow">01 · Projetos</p>
+            <h2 data-i18n="proj.title">Projetos em destaque</h2>
           </div>
-        </section>
+          <a class="link-arrow" href="https://github.com/WalterCordeiroGuilhermino" target="_blank" rel="noopener">
+            <span data-i18n="proj.all">Todos no GitHub</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+        <div id="projects-list" class="projects" aria-live="polite"></div>
+      </div>
+    </section>
 
-        <section class="contact contact-card">
-          <h2>Contato</h2>
-          <ul class="contact-list">
-            <li>
-              <a href="https://wa.me/5519981173811?text=Olá!%20Gostaria%20de%20entrar%20em%20contato." target="_blank">
-                <i class="fab fa-whatsapp contact-icon"></i> WhatsApp
-              </a>
-            </li>
-            <li>
-              <a href="mailto:waltercguilhermino@gmail.com">
-                <i class="fas fa-envelope contact-icon"></i> Email
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/WalterCordeiroGuilhermino" target="_blank">
-                <i class="fab fa-github contact-icon"></i> GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://linkedin.com/in/walterguilhermino" target="_blank">
-                <i class="fab fa-linkedin contact-icon"></i> LinkedIn
-              </a>
-            </li>
-            <li>
-              <a href="https://public.tableau.com/app/profile/walter.guilhermino/vizzes" target="_blank">
-                <img src="https://cdn.worldvectorlogo.com/logos/tableau-software.svg"
-     alt="Tableau Logo">
-                Tableau Public
-              </a>
-            </li>
+    <!-- ============ SOBRE ============ -->
+    <section class="section section--alt" id="sobre">
+      <div class="container about">
+        <div>
+          <p class="eyebrow" data-i18n="about.eyebrow">02 · Sobre</p>
+          <h2 data-i18n="about.title">Sobre mim</h2>
+        </div>
+        <div class="about__text">
+          <p data-i18n="about.p1">Sou formado em Administração pela PUC-Campinas, técnico em Informática e faço pós em Data Science e BI na Unicamp. Passei por IBM, Zoetis e Forvis Mazars, sempre perto de processos, números e sistemas.</p>
+          <p data-i18n="about.p2">O que mais gosto é pegar uma base bagunçada, limpar, organizar e transformar em algo que alguém consiga usar para decidir. Hoje direciono essa experiência para dados e tecnologia.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STACK ============ -->
+    <section class="section" id="stack">
+      <div class="container">
+        <p class="eyebrow" data-i18n="stack.eyebrow">03 · Stack</p>
+        <h2 data-i18n="stack.title">Ferramentas e habilidades</h2>
+        <div class="stack" id="stack-list">
+          <div class="stack__group" data-modes="tech negocios">
+            <h3><i class="fas fa-database" aria-hidden="true"></i> <span data-i18n="stack.g1">Dados & BI</span></h3>
+            <ul class="tags"><li>Power BI</li><li>DAX</li><li>Power Query</li><li>SQL</li><li>Tableau</li><li data-i18n="stack.excel">Excel avançado</li></ul>
+          </div>
+          <div class="stack__group" data-modes="tech">
+            <h3><i class="fas fa-brain" aria-hidden="true"></i> <span data-i18n="stack.g2">Programação & IA</span></h3>
+            <ul class="tags"><li>Python</li><li>pandas</li><li>scikit-learn</li><li>PySpark</li><li>YOLO</li><li>R</li></ul>
+          </div>
+          <div class="stack__group" data-modes="tech negocios">
+            <h3><i class="fas fa-gears" aria-hidden="true"></i> <span data-i18n="stack.g3">Automação & Sistemas</span></h3>
+            <ul class="tags"><li>VBA</li><li>Power Automate</li><li>Power Apps</li><li>SAP (SD, MM, Ariba)</li><li data-i18n="stack.impl">Implantação de sistemas</li></ul>
+          </div>
+          <div class="stack__group" data-modes="negocios">
+            <h3><i class="fas fa-scale-balanced" aria-hidden="true"></i> <span data-i18n="stack.g4">Finanças & Processos</span></h3>
+            <ul class="tags">
+              <li data-i18n="stack.f1">Contas a pagar/receber</li><li data-i18n="stack.f2">Faturamento</li>
+              <li data-i18n="stack.f3">Auditoria externa</li><li data-i18n="stack.f4">Gestão de contratos</li>
+              <li>PDCA · 5W2H · Ishikawa</li><li data-i18n="stack.f5">Metodologias ágeis</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIÊNCIA ============ -->
+    <section class="section section--alt" id="experiencia">
+      <div class="container">
+        <p class="eyebrow" data-i18n="exp.eyebrow">04 · Trajetória</p>
+        <h2 data-i18n="exp.title">Experiência</h2>
+
+        <ol class="timeline">
+          <li>
+            <div class="timeline__head">
+              <h3><span data-i18n="exp.1.role">Trainee de Auditoria</span> <span class="co">· Forvis Mazars</span></h3>
+              <!-- TODO: preencher o mês/ano de saída nas duas línguas (aqui e em I18N_EN no main.js) -->
+              <p class="timeline__date" data-i18n="exp.1.date">Dez 2025 – [mês/ano]</p>
+            </div>
+            <ul>
+              <li data-i18n="exp.1.b1">Reduzi o tempo de preparação e os erros manuais de conciliação, criando rotinas em Power Query/VBA para limpar bases e relatórios contábeis.</li>
+              <li data-i18n="exp.1.b2">Testei controles e saldos de disponibilidades, contas a pagar/receber, estoques, imobilizado e tributos (PIS, COFINS, ICMS).</li>
+            </ul>
+          </li>
+          <li>
+            <div class="timeline__head">
+              <h3><span data-i18n="exp.2.role">Assistente Comercial</span> <span class="co">· Confrapag</span></h3>
+              <p class="timeline__date" data-i18n="exp.2.date">Set 2025 – Nov 2025</p>
+            </div>
+            <ul>
+              <li data-i18n="exp.2.b1">Apoiei o acompanhamento de indicadores comerciais e a gestão da carteira de clientes, na expansão para a região Nordeste.</li>
+            </ul>
+          </li>
+          <li>
+            <div class="timeline__head">
+              <h3><span data-i18n="exp.3.role">Estagiário Administrativo de EHS</span> <span class="co">· Zoetis Brasil</span></h3>
+              <p class="timeline__date" data-i18n="exp.3.date">Jun 2022 – Jun 2024</p>
+            </div>
+            <ul>
+              <li data-i18n="exp.3.b1">Reduzi em 40% o tempo de resposta às tratativas de risco, implantando o novo sistema de gestão de riscos e uma revisão semanal.</li>
+              <li data-i18n="exp.3.b2">Processei 50+ faturas por mês, com controle de notas fiscais, contas a pagar e conformidade fiscal.</li>
+              <li data-i18n="exp.3.b3">Administrei 50+ contratos de prestadores de serviço, garantindo renovações e conformidade regulatória.</li>
+            </ul>
+          </li>
+          <li>
+            <div class="timeline__head">
+              <h3>Quote to Cash Intern <span class="co">· IBM Brasil</span></h3>
+              <p class="timeline__date" data-i18n="exp.4.date">Set 2019 – Ago 2021</p>
+            </div>
+            <ul>
+              <li data-i18n="exp.4.b1">Administrei mais de USD 100 mil por mês em pedidos de clientes dos EUA e Canadá, dentro dos padrões de auditoria.</li>
+              <li data-i18n="exp.4.b2">Alcancei índice de satisfação do cliente de 96, aplicando metodologias ágeis e Design Thinking aos fluxos da equipe.</li>
+            </ul>
+          </li>
+        </ol>
+
+        <div class="edu">
+          <h3 data-i18n="edu.title">Formação</h3>
+          <ul>
+            <li data-i18n="edu.1"><strong>Pós-graduação em Data Science e BI</strong> · Unicamp · em andamento</li>
+            <li data-i18n="edu.2"><strong>Bacharelado em Administração</strong> · PUC-Campinas · 2024</li>
+            <li data-i18n="edu.3"><strong>Técnico em Informática</strong> · ETEC Hortolândia · 2014</li>
           </ul>
-        </section>
+          <details>
+            <summary data-i18n="edu.certs">Certificações e cursos</summary>
+            <ul class="tags tags--plain">
+              <li>McKinsey.org Forward Program</li><li>Enterprise Design Thinking Practitioner (IBM)</li>
+              <li>IBM Agile Explorer</li><li>Power BI Essential Training</li><li>SAP ERP Essential Training</li>
+              <li>Excel Essential Training</li><li>OKRs</li><li>Agile Foundations</li>
+            </ul>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ RODAPÉ / CONTATO ============ -->
+  <footer class="footer" id="contato">
+    <div class="container">
+      <h2 data-i18n="foot.title">Vamos conversar?</h2>
+      <p class="footer__lead" data-i18n="foot.lead">Respondo rápido por e-mail, LinkedIn ou WhatsApp.</p>
+
+      <div class="footer__cta">
+        <a class="btn btn--primary" href="mailto:waltercguilhermino@gmail.com"><i class="fas fa-envelope" aria-hidden="true"></i> waltercguilhermino@gmail.com</a>
+        <a class="btn btn--ghost" id="cv-download" href="assets/curriculo.pdf" download hidden>
+          <i class="fas fa-file-arrow-down" aria-hidden="true"></i> <span data-i18n="foot.cv">Baixar currículo (PDF)</span>
+        </a>
       </div>
 
-      <section class="projects-container">
-        <h2 class="projects-title">Projetos</h2>
-        <div id="projects-list">
-          </div>
-      </section>
+      <ul class="socials">
+        <li><a href="https://linkedin.com/in/walterguilhermino" target="_blank" rel="noopener"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+        <li><a href="https://github.com/WalterCordeiroGuilhermino" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></li>
+        <li><a href="https://public.tableau.com/app/profile/walter.guilhermino/vizzes" target="_blank" rel="noopener"><i class="fas fa-chart-column" aria-hidden="true"></i> Tableau Public</a></li>
+        <li><a href="https://wa.me/5519981173811?text=Ol%C3%A1!%20Vi%20seu%20portf%C3%B3lio." target="_blank" rel="noopener"><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp</a></li>
+      </ul>
 
-      <section class="work-experience-container projects-container">
-          <h2 class="work-experience-title">Experiência Profissional</h2>
-          <div class="experience-list">
-              <div class="experience-item">
-                  <div class="experience-header">
-                      <h3>Trainee de Auditoria</h3>
-                      <p class="experience-company">Forvis Mazars | Dez 2025 - Atualmente</p>
-                  </div>
-                  <ul class="experience-description">
-                      <li>Gestão de Processos e Melhoria Contínua: Desenvolvimento de rotinas em Power Query/VBA para automação limpeza de bases de dados e relatórios contábeis, reduzindo o tempo de preparação e erros manuais de conciliação</li>
-                      <li>Gestão Financeira:  Condução de análises e testes para as áreas como disponibilidades, contas a pagar/receber, estoques, ativo imobilizado, passivos, obrigações trabalhistas, tributárias, fiscais e patrimônio líquido.</li>
-                  </ul>
-              </div>
-
-              <div class="experience-item">
-                  <div class="experience-header">
-                      <h3>Estagiário Administrativo de EHS</h3>
-                      <p class="experience-company">Zoetis Brasil | Jun 2022 - Jun 2024</p>
-                  </div>
-                  <ul class="experience-description">
-                      <li>Gestão de Processos e Melhoria Contínua: Implementação de um novo sistema de gerenciamento de riscos, revisão semanal das tratativas (redução de 40% no tempo de resposta), identificação de melhorias em processos.</li>
-                      <li>Gestão Financeira: Responsável pelo processamento de mais de 50 faturas mensais, controle de notas fiscais, contas a pagar e conformidade fiscal.</li>
-                      <li>Gestão de Suprimentos e Contratos: Prospecção e negociação de suprimentos e serviços, administração de mais de 50 contratos de prestadores de serviços, garantindo renovações e conformidade regulatória.</li>
-                      <li>Organização de Documentação: Organização de arquivos, administração de documentos, elaboração e organização de relatório e integração de novos funcionários.</li>
-                  </ul>
-              </div>
-               <div class="experience-item">
-                  <div class="experience-header">
-                      <h3>Quote to Cash Intern</h3>
-                      <p class="experience-company">IBM Brasil | Set 2019 - Ago 2021</p>
-                  </div>
-                  <ul class="experience-description">
-                      <li>Gestão de Pedidos: Administração de mais de USD 100.000 em pedidos de vendas mensais para clientes dos EUA e Canadá, garantindo precisão e conformidade com padrões de auditoria.</li>
-                      <li>Alcanço de um índice de satisfação do cliente de 96.</li>
-                      <li>Otimização de Processos: Aplicação de metodologias ágeis e Design Thinking para otimização dos fluxos de trabalho da equipe, resultando em aumento de produtividade da equipe e redução do tempo de processamento de pedidos.</li>
-                  </ul>
-              </div>
-          </div>
-      </section>
-
-      <section class="education-container projects-container">
-        <h2 class="education-title">Educação</h2>
-        <div class="education-list">
-          
-          <div class="education-item">
-                <div class="education-header">
-                    <h3>Bacharelado em Ciências Contabéis</h3>
-                    <p class="education-institution">Fundação Instituto de Pesquisas Contábeis, Atuariais e Financeiras | Em Andamento</p>
-                </div>
-            </div>
-          
-          <div class="education-item">
-                <div class="education-header">
-                    <h3>Pós Graduação em Data Science</h3>
-                    <p class="education-institution">Universidade Estadual de Campinas | Em andamento</p>
-                </div>
-            </div>
-          <div class="education-item">
-                <div class="education-header">
-                    <h3>Bacharelado em Administração</h3>
-                    <p class="education-institution">Pontifícia Universidade Católica de Campinas | Concluído em Dez 2024</p>
-                </div>
-            </div>
-             <div class="education-item">
-                <div class="education-header">
-                    <h3>Técnico em Informática</h3>
-                    <p class="education-institution">ETEC Hortolândia | Concluído em Dez 2014</p>
-                </div>
-            </div>
-        </div>
-      </section>
-
-       <section class="skills-container projects-container">
-        <h2 class="skills-title">Habilidades</h2>
-        <div class="skills-list">
-           <div class="skill-category">
-            <h3>Administrativo</h3>
-            <ul>
-              <li>Gestão Financeira e Contabilidade Básica</li>
-              <li>Domínio de Softwares de Gestão (ERPs, SAP)</li>
-              <li>Conhecimento em Pacote Office/Microsoft 365 (Excel)</li>
-              <li>Habilidades de Negociação</li>
-            </ul>
-          </div>
-          <div class="skill-category">
-            <h3>Processos e Tecnologia</h3>
-            <ul>
-              <li>Gerenciamento de Projetos (metodologias ágeis)</li>
-              <li>Gerenciamento de Processos e Melhoria Contínua</li>
-              <li>Implementação de Sistemas</li>
-              <li>Automação de Processos</li>
-            </ul>
-          </div>
-           <div class="skill-category">
-            <h3>Dados e Análise</h3>
-            <ul>
-              <li>Análise de Dados e Business Intelligence (BI)</li>
-              <li>Conhecimento em Banco de Dados e SQL</li>
-              <li>Linguagens de Programação (Python)</li>
-              <li>Domínio de Ferramentas Específicas da Área (Power BI, Tableau)</li>
-            </ul>
-          </div>
-           <div class="skill-category">
-            <h3>Soft Skills</h3>
-            <ul>
-              <li>Comunicação Eficaz</li>
-              <li>Resolução de Problemas</li>
-              <li>Adaptabilidade e Flexibilidade</li>
-              <li>Colaboração e Trabalho em Equipe</li>
-              <li>Inteligência Emocional</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-
-      <section class="certifications-container projects-container">
-          <h2 class="certifications-title">Certificações e Treinamentos</h2>
-          <div class="certifications-list">
-              <div class="certification-item">
-                  <ul class="certification-description">
-                      <li>McKinsey.org Forward Program</li>
-                      <li>Enterprise Design Thinking Practitioner</li>
-                      <li>IBM Agile Explorer</li>
-                      <li>Goal Setting: Objectives and Key Results (OKRs)</li>
-                      <li>Interpersonal Communication</li>
-                      <li>Developing Your Emotional Intelligence</li>
-                      <li>Communicating with Confidence</li>
-                      <li>Agile Foundations</li>
-                      <li>SAP ERP Essential Training</li>
-                      <li>Excel Essential Training (Microsoft 365)</li>
-                      <li>Communication Foundations</li>
-                      <li>Power BI Essential Training</li>
-                  </ul>
-              </div>
-          </div>
-      </section>
-
-
-      <footer>
-        <p><small>Hospedado no GitHub Pages &mdash; Tema por <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
+      <p class="footer__small">© <span id="year"></span> Walter Cordeiro Guilhermino · <span data-i18n="foot.small">Feito à mão e publicado no GitHub Pages</span></p>
     </div>
-    <script src="javascripts/scale.fix.js"></script>
-    <script src="javascripts/main.js"></script>
-  </body>
+  </footer>
+
+  <script src="javascripts/main.js"></script>
+</body>
 </html>
